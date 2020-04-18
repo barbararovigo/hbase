@@ -41,7 +41,7 @@ experiência nas informações profissionais;
 
 
 5. Utilize o scan para mostrar apenas o nome e profissão dos italianos.  
-scan ´italians´, {COLUMNS => ['personal-data:name', 'professional-data:role']}
+`scan ´italians´, {COLUMNS => ['personal-data:name', 'professional-data:role']}`  
 
 
 6. Apague os italianos com row id ímpar  
