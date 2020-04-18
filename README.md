@@ -31,6 +31,7 @@ experiência nas informações profissionais;
 `put 'italians', '12', 'professional-data:experienceyears', '6'`  
 
 2. Adicione o controle de 5 versões na tabela de dados pessoais.  
+`alter ´italians´, NAME => ´personal-data´, VERSIONS => 5`
 
 
 3. Faça 5 alterações em um dos italianos;  
@@ -40,6 +41,7 @@ experiência nas informações profissionais;
 
 
 5. Utilize o scan para mostrar apenas o nome e profissão dos italianos.  
+scan ´italians´, {COLUMNS => ['personal-data:name', 'professional-data:role']}
 
 
 6. Apague os italianos com row id ímpar  
