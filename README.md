@@ -35,13 +35,17 @@ experiência nas informações profissionais;
 
 
 3. Faça 5 alterações em um dos italianos;  
-
+`put 'italians', '7','personal-data:name', 'Barbara Salvador'`
+`put 'italians', '7','personal-data:name', 'Barbara Sabrina Rovigo Salvador'`
+`put 'italians', '7','personal-data:city', 'Blumenau'`
+`put 'italians', '7','professional-data:salary', '10000'`
+`put 'italians', '7','professional-data:role', 'Analista de Sistemas'`
 
 4. Com o operador get, verifique como o HBase armazenou o histórico.  
 
 
 5. Utilize o scan para mostrar apenas o nome e profissão dos italianos.  
-`scan ´italians´, {COLUMNS => ['personal-data:name', 'professional-data:role']}`  
+`scan 'italians', {COLUMNS => ['personal-data:name', 'professional-data:role']}`  
 
 
 6. Apague os italianos com row id ímpar  
