@@ -42,29 +42,27 @@ experiência nas informações profissionais;
 `put 'italians', '7','professional-data:role', 'Analista de Sistemas'`  
 
 4. Com o operador get, verifique como o HBase armazenou o histórico.  
-`get 'italians', '7', {COLUMN=>'personal-data:name', VERSIONS=> 3}`
-`get 'italians', '7', {COLUMN=>'personal-data:city', VERSIONS=> 2}`
-`get 'italians', '7', {COLUMN=>'professional-data:salary', VERSIONS=> 2}`
-`get 'italians', '7', {COLUMN=>'professional-data:role', VERSIONS=> 2}`
-
-
-
-
-
-
+`get 'italians', '7', {COLUMN=>'personal-data:name', VERSIONS=> 3}`  
+`get 'italians', '7', {COLUMN=>'personal-data:city', VERSIONS=> 2}`  
+`get 'italians', '7', {COLUMN=>'professional-data:salary', VERSIONS=> 2}`  
+`get 'italians', '7', {COLUMN=>'professional-data:role', VERSIONS=> 2}`  
 
 5. Utilize o scan para mostrar apenas o nome e profissão dos italianos.  
 `scan 'italians', {COLUMNS => ['personal-data:name', 'professional-data:role']}`  
 
-
-6. Apague os italianos com row id ímpar  
-
-
+6. Apague os italianos com row id ímpar 
+`deleteall 'italians', '1'`  
+`deleteall 'italians', '3'`  
+`deleteall 'italians', '5'`  
+`deleteall 'italians', '7'`  
+`deleteall 'italians', '9'`  
+`deleteall 'italians', '11'`  
+  
 7. Crie um contador de idade 55 para o italiano de row id 5  
-
+`incr 'italians', '5', 'personal-data:idade', 55`
 
 8. Incremente a idade do italiano em 1  
-
+`incr 'italians', '5', 'personal-data:idade'`
 
 
 
